@@ -1,4 +1,3 @@
-class Song
   attr_accessor :name, :artist_name
   @@all = []
 
@@ -55,12 +54,15 @@ class Song
     title = filename.split(" - ")
     artist = title[0]
     song_name, extension = title[1].split(".")
-
     song = self.create
     song.artist_name = artist
     song.name = song_name
     song
   end
+
+  def self.destroy_all
+   self.all.clear
+ end
 
 
 end
